@@ -14,18 +14,24 @@
 <div class="container">
     <h1>Hello, dynamic templates!</h1>
 
-    <form>
-        <div class="form-group">
-            <label for="templateTA">Template:</label>
-            <textarea class="form-control" id="templateTA"></textarea>
-        </div>
-    </form>
+    <div id="app">
 
-    <div>
-        <div id="app" class="p-2">
-            <dynamic :template="html"></dynamic>
+            <div class="form-group">
+                <label for="templateTA">Template:</label>
+                <textarea v-model="html" class="form-control" id="templateTA"></textarea>
+            </div>
+            <input type="text" v-model="person.name"/>
+            <input type="number" v-model="person.age"/>
+        </form>
+
+        <div>
+            <div class="p-2">
+                <dynamic :template="html" :template-data="person"></dynamic>
+            </div>
         </div>
+
     </div>
+
 </div>
 
 
